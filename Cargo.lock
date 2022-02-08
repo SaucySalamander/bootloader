@@ -5,3 +5,11 @@ version = 3
 [[package]]
 name = "bootloader"
 version = "0.1.0"
+dependencies = [
+ "uefi",
+]
+
+[[package]]
+name = "uefi"
+version = "0.1.0"
+source = "git+https://github.com/SaucySalamander/uefi-wrapper?branch=feature/lib_conversion#e1858f3c36abbb9682b8f61515cb29d0f5f60611"

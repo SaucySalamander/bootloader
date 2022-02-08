@@ -2,7 +2,7 @@
 
 #cargo build
 cargo clean
-cargo build -Z build-std="core","compiler_builtins","alloc" --target x86_64-unknown-uefi
+cargo +nightly build
 
 mkdir -p ./target/x86_64-unknown-uefi/debug/esp/EFI/Boot/
 cp ./target/x86_64-unknown-uefi/debug/bootloader.efi ./target/x86_64-unknown-uefi/debug/esp/EFI/Boot/BootX64.efi
