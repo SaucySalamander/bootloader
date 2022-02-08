@@ -2,19 +2,15 @@
 #![no_main]
 #![feature(abi_efiapi)]
 
-use crate::data_types::{Handle, Status};
-use crate::table::system_table::SystemTable;
-
-mod table;
-mod protocols;
-mod data_types;
+use uefi::data_types::char::{Handle, Status};
+use uefi::tables::system_table::SystemTable;
 
 #[no_mangle]
 unsafe extern "efiapi" fn efi_main(_image_handle: Handle, mut system_table: SystemTable) -> Status {
 
-    let mut vendor = system_table.firmware_vendor;
+    let vendor = system_table.firmware_vendor;
     system_table.stdout().clear_screen();
-    system_table.stdout().output_string(&*vendor);
+    system_table.stdout().output_string(&(*vendor));
     loop{}
     // Status::SUCCESS
 }
