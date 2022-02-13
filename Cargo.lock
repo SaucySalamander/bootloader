@@ -12,4 +12,4 @@ dependencies = [
 [[package]]
 name = "uefi"
 version = "0.1.0"
-source = "git+https://github.com/SaucySalamander/uefi-wrapper?branch=feature/lib_conversion#e1858f3c36abbb9682b8f61515cb29d0f5f60611"
+source = "git+https://github.com/SaucySalamander/uefi-wrapper?branch=feature/chars_and_strings#86bdbd8b583855c9f8550b5f58c86a4ac15152e1"

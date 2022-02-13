@@ -6,4 +6,4 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-uefi = {git = "https://github.com/SaucySalamander/uefi-wrapper", branch = "feature/lib_conversion" }
+uefi = {git = "https://github.com/SaucySalamander/uefi-wrapper", branch = "feature/chars_and_strings" }
