@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        scannerHome 'sonar'
+        SonarRunnerInstallation 'sonar'
     }
     stages {
         stage('Stage 1') {
