@@ -5,7 +5,7 @@ pipeline {
             steps{
                 tool name: 'sonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
                 withSonarQubeEnv('SonarCloud') {
-                echo "hello";
+                echo "${scannerHome}";
             }
             }
         }
