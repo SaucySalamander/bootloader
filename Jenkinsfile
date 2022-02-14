@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('MegaLinter') {
             agent {
-            kubernetes {
+                kubernetes {
                     yaml """
             kind: Pod
             metadata:
@@ -17,12 +17,12 @@ pipeline {
                 command:
                     - cat
                 """
-             }
-             steps{
+                }
+            }
+            steps {
 
-                    sh 'VALIDATE_ALL_CODEBASE=true /entrypoint.sh'
+                sh 'VALIDATE_ALL_CODEBASE=true /entrypoint.sh'
 
-             }
             }
         }
     }
