@@ -14,8 +14,13 @@ pipeline {
                 image: megalinter/megalinter:v5
                 imagePullPolicy: Always
                 command:
-                    - VALIDATE_ALL_CODEBASE=true /entrypoint.sh
+                    - cat
                 """
+             }
+             steps{
+
+                    sh 'VALIDATE_ALL_CODEBASE=true /entrypoint.sh'
+
              }
             }
         }
