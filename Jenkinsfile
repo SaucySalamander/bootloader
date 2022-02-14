@@ -13,6 +13,7 @@ pipeline {
               - name: megalinter
                 image: megalinter/megalinter:v5
                 imagePullPolicy: Always
+                tty: true
                 command:
                     - cat
                 """
