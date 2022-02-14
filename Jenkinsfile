@@ -20,7 +20,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'export DEFAULT_WORKSPACE=/home/jenkins/agent/workspace/bootloader_feature_jenkins/ /entrypoint.sh'
+                sh 'export DEFAULT_WORKSPACE=/home/jenkins/agent/workspace/bootloader_feature_jenkins/; /entrypoint.sh'
             }
         }
     }
