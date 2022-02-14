@@ -20,8 +20,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'ls /tmp/lint'
-                sh 'VALIDATE_ALL_CODEBASE=true /entrypoint.sh'
+                sh 'while :; do echo \'Press <CTRL+C> to exit.\'; sleep 1; done\n'
             }
         }
     }
