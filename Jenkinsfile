@@ -4,7 +4,6 @@ pipeline {
         stage('MegaLinter') {
             agent {
             kubernetes {
-                    label podlabel
                     yaml """
             kind: Pod
             metadata:
@@ -15,7 +14,7 @@ pipeline {
                 image: megalinter/megalinter:v5
                 imagePullPolicy: Always
                 command:
-                    - ls
+                    - sh
                 """
              }
             }
