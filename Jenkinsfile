@@ -3,14 +3,23 @@ pipeline {
     stages {
         stage('MegaLinter') {
             agent {
-                docker {
-                    image 'megalinter/megalinter:v5'
-                    args "-u root -e VALIDATE_ALL_CODEBASE=true -v ${WORKSPACE}:/tmp/lint --entrypoint=''"
-                    reuseNode true
-                }
-            }
+            kubernetes {
+                    label podlabel
+                    yaml """
+            kind: Pod
+            metadata:
+              name: jenkins-agent
+            spec:
+              containers:
+              - name: megalinter
+                image: megalinter/megalinter:v5
+                imagePullPolicy: Always
+                command:
+                    - ls
+                """
+             }
             steps {
-                sh '/entrypoint.sh'
+                sh 'VALIDATE_ALL_CODEBASE=true /entrypoint.sh'
             }
         }
     }
