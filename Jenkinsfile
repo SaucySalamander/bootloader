@@ -20,7 +20,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'ls /'
+                sh 'ls /tmp/lint'
                 sh 'VALIDATE_ALL_CODEBASE=true /entrypoint.sh'
             }
         }
