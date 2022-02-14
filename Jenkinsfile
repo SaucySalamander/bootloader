@@ -18,6 +18,7 @@ pipeline {
                     - ls
                 """
              }
+            }
             steps {
                 sh 'VALIDATE_ALL_CODEBASE=true /entrypoint.sh'
             }
