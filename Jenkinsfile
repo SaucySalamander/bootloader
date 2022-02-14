@@ -20,7 +20,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'while :; do echo \'Press <CTRL+C> to exit.\'; sleep 1; done\n'
+                sh 'export DEFAULT_WORKSPACE=/home/jenkins/agent/workspace/bootloader_feature_jenkins/ /entrypoint.sh'
             }
         }
     }
