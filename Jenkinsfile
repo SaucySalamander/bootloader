@@ -1,9 +1,7 @@
 pipeline {
-    stages {
-        stage('MegaLinter') {
-            agent {
-                kubernetes {
-                    yaml """
+    agent {
+        kubernetes {
+            yaml """
                         kind: Pod
                         metadata:
                           name: jenkins-agent
@@ -16,8 +14,10 @@ pipeline {
                             command:
                                 - cat
                         """
-                }
-            }
+        }
+    }
+    stages {
+        stage('MegaLinter') {
             steps {
                 sh 'export DEFAULT_WORKSPACE=/home/jenkins/agent/workspace/bootloader_feature_jenkins/; /entrypoint.sh'
             }
